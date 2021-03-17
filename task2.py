@@ -31,7 +31,7 @@ else:
   
   
   
-  import sys
+import sys
 
 password = input("Type here your password: ")
 password_length: int = password.__len__()
@@ -60,7 +60,7 @@ while while_count < symbols.__len__():
     symb_count += 1
     break
   while_count += 1
-if symb_count > 0 and password.find(" ") == -1:
+if symb_count > 0 and " " not in password:
   print("Your password has been validated successfully")
 elif symb_count == 0:
   print("You password shall include at least one of these symbols: !, #, $, %, ^, &, *, ~")
