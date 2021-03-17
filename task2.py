@@ -15,3 +15,8 @@ if count == 0:
   print ("error")
 else:
   print("correct")
+# Checking for special sympols availability
+if string.find("$") and string.find("%"):
+  print("well done")
+else:
+  print("invalid")
