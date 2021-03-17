@@ -1,27 +1,28 @@
 import sys
 
-string = input("type here your password: ")
-string_length: int = string.__len__()
+password = input("type here your password: ")
+password_length: int = password.__len__()
 # Checking the password length
-if string_length < 8:
-  print("error")
+if password_length < 8:
+  print("Your password shall include at least 8 sympols")
   sys.exit(0)
-else:
-  print("correct")
+  
 # Checking for capital letters availability
 count = 0
-for i in string:
+for i in password:
   if i.isupper():
     count += 1
     break
 if count == 0:
-  print ("error")
+  print ("Your password shall include at least one capital letter")
   sys.exit(0)
+  
+# Checking for special symbols
+if (password.find("$") != -1 or password.find("%") != -1 or password.find("_") != -1) and password.find(" ") == -1:
+  print("Your password has been validated successfully")
 else:
-  print("correct")
-# Checking for special sympols availability
-if (string.find("$") != -1 or string.find("%") != -1 or string.find("_") != -1) and string.find(" ") == -1:
-  print("well done")
-else:
-  print("invalid")
+  if password.find("$") == -1 and password.find("%") == -1 and password.find("_") == -1:
+    print("You password shall include at least one of these symbols: $, %, _")
+  else:
+    print("No gaps shall be used")
   sys.exit(0)
