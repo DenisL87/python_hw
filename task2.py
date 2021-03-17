@@ -5,7 +5,7 @@ password_length: int = password.__len__()
 
 # Checking the password length
 if password_length < 8:
-  print("Your password shall include at least 8 sympols")
+  print("Your password shall include at least 8 symbols")
   sys.exit(0)
   
 # Checking for capital letters availability
