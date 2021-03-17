@@ -1,4 +1,4 @@
-string = input("type here: ")
+string = input("type here your password: ")
 string_length: int = string.__len__()
 # Checking the password length
 if string_length < 8:
@@ -16,7 +16,9 @@ if count == 0:
 else:
   print("correct")
 # Checking for special sympols availability
-if string.find("$") and string.find("%"):
+index_1 = string.find("$")
+index_2 = string.find("%")
+if index_2 != -1 & index_1 != -1:
   print("well done")
 else:
   print("invalid")
