@@ -1,6 +1,6 @@
 import sys
 
-password = input("type here your password: ")
+password = input("Type here your password: ")
 password_length: int = password.__len__()
 # Checking the password length
 if password_length < 8:
@@ -33,7 +33,7 @@ else:
   
   import sys
 
-password = input("type here your password: ")
+password = input("Type here your password: ")
 password_length: int = password.__len__()
 
 # Checking the password length
