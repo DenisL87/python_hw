@@ -1,10 +1,9 @@
 import sys
 
 password = input("Type here your password: ")
-password_length: int = password.__len__()
 
 # Checking the password length
-if password_length < 8:
+if password.__len__() < 8:
   print("Your password shall include at least 8 symbols")
   sys.exit(0)
   
