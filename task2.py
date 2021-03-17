@@ -20,7 +20,7 @@ if count == 0:
 else:
   print("correct")
 # Checking for special sympols availability
-if string.find("$") != -1 & string.find("%") != -1 & string.find("_") != -1 & string.find(" ") == -1:
+if string.find("$") != -1 or string.find("%") != -1 or string.find("_") != -1 and string.find(" ") == -1:
   print("well done")
 else:
   print("invalid")
