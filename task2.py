@@ -28,3 +28,7 @@ if symbol_1 != -1 & symbol_2 != -1 & symbol_3 != -1:
 else:
   print("invalid")
   sys.exit(0)
+# Checking for gaps
+if string.find(" ") != -1:
+  print("invalid")
+  sys.exit(0)
