@@ -9,7 +9,7 @@ try:
     valid_operation = ['+', '-', '*', '/', '**', '//']
     operation: str = input('Input math operation: ')
     if operation not in valid_operation:
-        raise ValueError(f'Oparation {operation} is unavailable')
+        raise ValueError(f'Oparation {operation} is invalid')
 
     if operation == '**':
         print(first_value ** 2)
@@ -17,11 +17,7 @@ try:
 
     second_value: str = input('Input second value: ')
     second_value: int = int(second_value)
-except ValueError:
-    print('not a digit')
-    raise random.choice([ZeroDivisionError, ImportError, KeyError, UnicodeError, StopIteration])
 
-try:
     if operation == '+':
         print(first_value + second_value)
         sys.exit(0)
@@ -37,5 +33,7 @@ try:
     else:
         print(math.floor(first_value / second_value))
         sys.exit(0)
-except:
-    print("Zero division")
+
+except (ValueError, ZeroDivisionError):
+    print('error')
+    raise random.choice([ZeroDivisionError, ImportError, KeyError, UnicodeError, StopIteration])
