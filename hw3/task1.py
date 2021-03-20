@@ -1,38 +1,41 @@
 import math
 import sys
+import random
 
-first_value: str = input('Input first value: ')
-if not first_value.isdigit():
-    print(f'Value of type {type(first_value)} {first_value} is not a digit')
-    sys.exit(0)
-first_value: int = int(first_value)
-operation: str = input('Input math operation: ')
-if operation == '**':
-    print(first_value ** 2)
-    sys.exit(0)
-second_value: str = input('Input second value: ')
-if not second_value.isdigit():
-    print(f'Value of type {type(second_value)} {second_value} is not a digit')
-    sys.exit(0)
-second_value: int = int(second_value)
+try:
+    first_value: str = input('Input first value: ')
+    first_value: int = int(first_value)
 
-if operation == '+':
-    print(first_value + second_value)
-elif operation == '-':
-    print(first_value - second_value)
-elif operation == '*':
-    print(first_value * second_value)
-elif operation == '/':
-    try:
+    valid_operation = ['+', '-', '*', '/', '**', '//']
+    operation: str = input('Input math operation: ')
+    if operation not in valid_operation:
+        raise ValueError(f'Oparation {operation} is unavailable')
+
+    if operation == '**':
+        print(first_value ** 2)
+        sys.exit(0)
+
+    second_value: str = input('Input second value: ')
+    second_value: int = int(second_value)
+except ValueError:
+    print('not a digit')
+    raise random.choice([ZeroDivisionError, ImportError, KeyError, UnicodeError, StopIteration])
+
+try:
+    if operation == '+':
+        print(first_value + second_value)
+        sys.exit(0)
+    elif operation == '-':
+        print(first_value - second_value)
+        sys.exit(0)
+    elif operation == '*':
+        print(first_value * second_value)
+        sys.exit(0)
+    elif operation == '/':
         print(first_value / second_value)
-    except ZeroDivisionError:
-        print("DIVISION BY ZERO!")
         sys.exit(0)
-elif operation == '//':
-    try:
+    else:
         print(math.floor(first_value / second_value))
-    except ZeroDivisionError:
-        print("DIVISION BY ZERO!")
         sys.exit(0)
-else:
-     print(f'Invalid operation {operation}')
+except:
+    print("Zero division")
