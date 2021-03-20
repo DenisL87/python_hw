@@ -11,12 +11,10 @@ for i in list:
 print(f'Max element: {max_el}')
 
 min_el = max_el
-for i in list:
-    if i < min_el and i != 0:
-        min_el = i
-print(f'Min element: {min_el}')
-
 sum = 0
 for i in list:
     sum += i
+    if i < min_el and i != 0:
+        min_el = i
+print(f'Min element: {min_el}')
 print(f'sum: {sum}')
