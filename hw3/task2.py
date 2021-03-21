@@ -1,9 +1,25 @@
-import random
 try:
-    int_one = int(input("Enter the first number "))
-    int_two = int(input("Enter the second number "))
-    if int_two == 0:
-        raise random.choice([ZeroDivisionError, ImportError, KeyError, UnicodeError, StopIteration])
-except:
-    print(random)
+    import random
+    # ImportError
+    import sdtha
+
+    # ZeroDivisionError
+    int_one = 20
+    int_two = 0
+    int_one / int_two
+
+    # KeyError
+    dict = {'a': 8, 'b': 0, 'c': 9, 'd': None}
+    print(dict[5])
+
+    # UnicodeError
+    string = '你好'
+    string = string.encode('ascii')
+
+    # StopIteration
+    for value in dict['d']:
+        pass
+    raise random.choice([ZeroDivisionError, ImportError, KeyError, UnicodeError, StopIteration])
+except Exception as random:
+    print(f"{random} error")
 print('finish')
