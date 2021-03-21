@@ -6,7 +6,7 @@ try:
     # ZeroDivisionError
     int_one = 20
     int_two = 0
-    int_one / int_two
+    int_three = int_one / int_two
 
     # KeyError
     dict = {'a': 8, 'b': 0, 'c': 9, 'd': None}
