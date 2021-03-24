@@ -1,8 +1,10 @@
 import datetime
-
-year = int(input("Enter a year here: "))
-month = int(1)
-day = int(1)
+try:
+  year = int(input("Enter a year here: "))
+except:
+  raise ValueError('Not a numeral')
+month = 1
+day = 1
 mondays = []
 
 while month < 13:
