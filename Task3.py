@@ -19,5 +19,5 @@ while month < 13:
   day += 1
       
 for i in mondays:
-  print (i)
+  print(i)
   
