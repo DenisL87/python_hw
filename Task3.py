@@ -2,7 +2,7 @@ import datetime
 try:
   year = int(input("Enter a year here: "))
 except:
-  raise ValueError('Not a numeral')
+  raise ValueError('Not a number')
 month = 1
 day = 1
 mondays = []
