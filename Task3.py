@@ -14,6 +14,11 @@ while month < 13:
     day = 1
   if to_check.strftime('%a') == 'Mon':
     mondays.append(to_check.strftime("%Y-%m-%d %a"))
+  try:
+    if mondays[-1] == mondays[-2]:
+      del mondays[-1]
+  except:
+    pass
   day += 1
       
 for i in mondays:
