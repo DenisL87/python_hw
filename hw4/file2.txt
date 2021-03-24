@@ -1,0 +1,1 @@
+The Crude Blast Furnace is used to make Steel (and Slag as a byproduct from version 0.7 onwards). Coal Coke or Charcoal can be used as a fuel.
