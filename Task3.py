@@ -2,8 +2,8 @@ import datetime
 
 year = int(input("Enter a year here: "))
 month = int(1)
-months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 day = int(1)
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 mondays = []
 year_count = year
 to_check = datetime.datetime(year, month, day)
