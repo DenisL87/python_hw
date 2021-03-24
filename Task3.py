@@ -10,7 +10,7 @@ mondays = []
 while month < 13:
   try:
     to_check = datetime.datetime(year, month, day)
-  except ValueError as error:
+  except:
     month += 1
     day = 1
     continue
