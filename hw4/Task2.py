@@ -1,14 +1,7 @@
-# import datetime
-
-# date_time = datetime.datetime(2019, 2, 12, 14, 41)
-
-# print(date_time.strftime("%b %d %Y %I:%M %p"))
-# print(date_time.strftime("%Y-%m-%d %H:%M:%S"))
-
-
 import datetime
 
-date = "Feb 12 2019 12:41PM"
+date = "Feb 12 2019 2:41PM"
+months = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6, "Jul": 7, 'Aug': 8, 'Sep': 9, 'Oct': 10, 'Nov': 11, 'Dec': 12}
 year = None
 month = None
 day = None
@@ -19,6 +12,8 @@ loop_count = 0
 while loop_count < len(date):
   if date[loop_count] == " ":
     month = date[0:loop_count]
+    if month in months:
+      month = months[month]
     date = date[loop_count + 1:]
     loop_count = 0
     break
@@ -53,3 +48,6 @@ while loop_count < len(date):
   loop_count += 1
 
 minutes = int(date[0:-2])
+
+date_time = datetime.datetime(year, month, day, hours, minutes)
+print(date_time.strftime("%Y-%m-%d %H:%M:%S"))
