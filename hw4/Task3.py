@@ -10,13 +10,13 @@ mondays = []
 
 while month < 13:
   try:
-    to_check = datetime.datetime(year, month, day)
+    to_search = datetime.datetime(year, month, day)
   except:
     month += 1
     day = 1
     continue
-  if to_check.strftime('%a') == 'Mon':
-    mondays.append(to_check.strftime("%Y-%m-%d %a"))
+  if to_search.strftime('%a') == 'Mon':
+    mondays.append(to_search.strftime("%Y-%m-%d %a"))
   day += 1
       
 for i in mondays:
