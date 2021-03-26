@@ -12,7 +12,7 @@ day = int(date[1])
 year = int(date[2])
 hours = int(time[0])
 minutes = time[1]
-if minutes[-2] == 'P' and minutes[-1] == 'M':
+if minutes[-2:] == 'PM':
   if hours == 12:
     hours = 0
   else:
