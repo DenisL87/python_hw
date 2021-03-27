@@ -3,4 +3,4 @@ if '.' in filename:
     extension = filename.split('.')
 else:
     raise Exception
-print(f'File type is .{extension[-1]}')
+print(f'File extension is .{extension[-1]}')
