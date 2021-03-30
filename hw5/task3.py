@@ -33,7 +33,6 @@ while f_count < len(file_text):
 f_count = 0
 most_used = file_text[0]
 most_frequent = 1
-word_count = 1
 while f_count < len(file_text):
     word_count = 1
     iteration = f_count + 1
