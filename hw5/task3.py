@@ -32,20 +32,18 @@ while f_count < len(file_text):
 
 f_count = 0
 most_used = file_text[0]
-highest = 1
+most_frequent = 1
 word_count = 1
-prev_word_count = 1
 while f_count < len(file_text):
-    prev_word_count = word_count
     word_count = 1
     iteration = f_count + 1
     while iteration < len(file_text):
         if file_text[f_count] == file_text[iteration]:
             word_count += 1
         iteration += 1
-    if word_count > prev_word_count and word_count > highest:
+    if word_count > most_frequent:
         most_used = file_text[f_count]
-        highest = word_count
+        most_frequent = word_count
     f_count += 1
 
 print(f'The longest word is: {longest}')
