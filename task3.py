@@ -10,4 +10,6 @@ def is_prime(integer):
     return False
 
 if __name__ == "__main__":
-  print(is_prime(17))
+  number = int(input("Type here: "))
+  print(is_prime(number))
+  
