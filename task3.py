@@ -1,7 +1,7 @@
 def is_prime(integer):
   count = 2
   if integer > 1:
-    while count < integer - 1:
+    while count < integer:
       if integer % count == 0:
         return False
       count += 1
