@@ -13,5 +13,5 @@ def string_processing(instructions):
   return list
 
 if __name__ == "__main__":
-  print(string_processing('iiisdoso'))
+  print(string_processing(input('Type here: ')))
   
