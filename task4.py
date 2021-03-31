@@ -7,7 +7,7 @@ def string_processing(instructions):
     elif operation == 'd':
       init_no -= 1
     elif operation == 's':
-      init_no *= init_no
+      init_no **= 2
     elif operation == 'o':
       list.append(init_no)
   return list
