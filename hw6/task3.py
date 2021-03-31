@@ -11,6 +11,4 @@ def is_prime(integer):
 
 if __name__ == "__main__":
   print(is_prime(int(input("Type here: "))))
-#   number = int(input("Type here: "))
-#   print(is_prime(number))
   
