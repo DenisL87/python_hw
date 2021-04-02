@@ -1,4 +1,4 @@
- import json
+import json
 
 def edit_file(file_name):
     with open(file_name) as file:
