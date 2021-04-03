@@ -10,7 +10,6 @@ def edit_file(file_name):
     with open(file_name, 'w') as file:
         json.dump(data, file, indent=4)
 
-
 if __name__ == '__main__':
     edit_file("questions.json")
     
