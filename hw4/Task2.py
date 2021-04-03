@@ -1,8 +1,8 @@
 from datetime import datetime
 
 date = "Feb 12 2019 2:41PM"
-date = datetime.strptime(date, '%b %d %Y %I:%M%p')
-print(date)
+converted_date = datetime.strptime(date, '%b %d %Y %I:%M%p')
+print(converted_date)
 
 
 # import datetime
