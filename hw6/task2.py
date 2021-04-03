@@ -1,7 +1,5 @@
 def is_even(integer):
-	if integer and integer % 2 == 0:
-	  return True
-	return False
+    return bool(integer % 2 == 0)
 
 if __name__ == "__main__":
   try:
