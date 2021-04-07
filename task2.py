@@ -52,15 +52,23 @@ main()
 # import random
 # import datetime
 
-# new_dict = {'round': {'round_no': None, 'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
-#             'round': {'round_no': None, 'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
-#             'round': {'round_no': None, 'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None}
+# new_dict = {'Round 1': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 2': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 3': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 4': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 5': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 6': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 7': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 8': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 9': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'Round 10': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
 #             }
 # count = 1
+  
 # for i in new_dict:
 #   new_dict[i]['round_no'] = 'Round ' + str(count)
 #   new_dict[i]['player1res'] = random.randint(1, 6) + random.randint(1, 6)
 #   new_dict[i]['player2res'] = random.randint(1, 6) + random.randint(1, 6)
 #   count += 1
-
+  
 # print(new_dict)
