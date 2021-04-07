@@ -50,14 +50,17 @@ main()
 
 
 # import random
-# new_dict = {'round1': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
-#             'round2': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
-#             'round3': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None}
+# import datetime
+
+# new_dict = {'round': {'round_no': None, 'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'round': {'round_no': None, 'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'round': {'round_no': None, 'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None}
 #             }
-
-
+# count = 1
 # for i in new_dict:
+#   new_dict[i]['round_no'] = 'Round ' + str(count)
 #   new_dict[i]['player1res'] = random.randint(1, 6) + random.randint(1, 6)
 #   new_dict[i]['player2res'] = random.randint(1, 6) + random.randint(1, 6)
+#   count += 1
 
 # print(new_dict)
