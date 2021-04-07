@@ -1,3 +1,5 @@
+from collections import Counter
+
 def converter(string, separator):
   punctuation = [',', '/', '.']
   new_list = string.split(separator)
@@ -10,14 +12,15 @@ def converter(string, separator):
         if new_list[count] == None:
           new_list.pop(new_list[count])
       p_count += 1
+    new_list[count] = new_list[count].lower()
     count += 1
   
-  
+  new_dict = Counter(new_list)
+  print(new_dict)
   pass
 
 
-my_str = input()
-delimiter = input()
+my_str = input('String')
+delimiter = input('delimiter')
 
-if __name__ == "__main__":
-  print(converter(my_str, delimiter))
+print(converter(my_str, delimiter))
