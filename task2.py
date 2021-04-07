@@ -45,3 +45,19 @@ def main():
         print(player_2_sum)
 
 main()
+
+
+
+
+# import random
+# new_dict = {'round1': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'round2': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None},
+#             'round3': {'player1name': "Player1", 'player2name': "Player2", 'player1res': None, 'player2res': None}
+#             }
+
+
+# for i in new_dict:
+#   new_dict[i]['player1res'] = random.randint(1, 6) + random.randint(1, 6)
+#   new_dict[i]['player2res'] = random.randint(1, 6) + random.randint(1, 6)
+
+# print(new_dict)
