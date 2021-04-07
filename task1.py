@@ -1,9 +1,3 @@
-arr = [5, 96, 2]
-total_string = str(arr[0])
-count = 1
-while count < len(arr):
-  total_string += str(arr[count])
-  count += 1
-
-total_number = int(total_string)
-print(total_number)
+arr = [52, 9, 1, 30, 200]
+max_int = reduce(lambda x, y: x + y, map(str, sorted(arr, key = str, reverse = True)))
+print(max_int)
