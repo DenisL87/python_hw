@@ -16,8 +16,7 @@ def converter(string, separator):
     count += 1
   
   new_dict = Counter(new_list)
-  print(new_dict)
-  pass
+  return new_dict
 
 
 my_str = input('String')
