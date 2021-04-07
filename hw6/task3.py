@@ -10,5 +10,8 @@ def is_prime(integer):
     return False
 
 if __name__ == "__main__":
-  print(is_prime(int(input("Type here: "))))
+  try:
+    print(is_prime(int(input("Type here: "))))
+  except:
+    print('Invalid value')
   

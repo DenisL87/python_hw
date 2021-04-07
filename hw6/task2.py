@@ -1,8 +1,8 @@
 def is_even(integer):
-  if integer % 2 == 0 and integer != 0:
-    return True
-  else:
-    return False
+    return bool(integer % 2 == 0)
 
 if __name__ == "__main__":
-  print(is_even(int(input('Type here: '))))
+  try:
+    print(is_even(int(input('Type here: '))))
+  except:
+    print('Invalid value')
