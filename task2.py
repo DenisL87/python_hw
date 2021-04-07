@@ -15,8 +15,8 @@ def main():
     player_1_sum = 0
     player_2_sum = 0
     if start == 'yes':
-        counter = 10
-        while counter > 0:
+        counter = 1
+        while counter < 11:
             player_1_value = first_player()
             print(player_1_value)
             player_2_value = second_player()
@@ -26,7 +26,7 @@ def main():
             player_1_sum += player_1_value
             player_2_sum += player_2_value
 
-            counter -= 1
+            counter += 1
 
         if player_1_sum > player_2_sum:
             print('First player won')
