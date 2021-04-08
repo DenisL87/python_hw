@@ -16,7 +16,6 @@ def converter(string, separator):
   new_dict = Counter(new_list)
   return new_dict
 
-
 my_str = input('String')
 delimiter = input('delimiter')
 
