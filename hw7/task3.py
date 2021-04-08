@@ -9,8 +9,6 @@ def converter(string, separator):
     while p_count < len(punctuation):
       if punctuation[p_count] in new_list[count]:
         new_list[count] = new_list[count].replace(punctuation[p_count], '')
-      if new_list[count] == None:
-        new_list.pop(new_list[count])
       p_count += 1
     new_list[count] = new_list[count].lower()
     count += 1
