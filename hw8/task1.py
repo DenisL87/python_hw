@@ -47,7 +47,7 @@ def hack_archive(file_name):
         password = build_pass()
         if password in wrong_passwords:
             continue
-        if extract_archive(file_to_open, str(password)) == True:
+        if extract_archive(file_to_open, str(password)):
             break
         else:
             wrong_passwords.append(password)
