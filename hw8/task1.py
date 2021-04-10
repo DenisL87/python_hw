@@ -44,11 +44,10 @@ def hack_archive(file_name):
             При неудачи (False) - добавить пароль в список `wrong_passwords` и больше не проверять данный пароль
             3. Счетчий неудачных попыток
         """
-        password = random.randint(999, 10000)
+        password = build_pass()
         if password in wrong_passwords:
             continue
-        check = extract_archive(file_to_open, str(password))
-        if check == True:
+        if extract_archive(file_to_open, str(password)) == True:
             break
         else:
             wrong_passwords.append(password)
