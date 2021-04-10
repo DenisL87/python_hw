@@ -58,7 +58,6 @@ def hack_archive(file_name):
     with open ('links.txt') as file:
         print(file.read())
 
-
         
 #############
 filename = 'task.zip'
