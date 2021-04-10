@@ -52,9 +52,11 @@ def hack_archive(file_name):
         else:
             wrong_passwords.append(password)
             tries += 1
+
     print(f'Archive {file_name} is hacked. Password - {password}')
     print(f'Password was found after {tries} tries')
-
+    with open ('links.txt') as file:
+        print(file.read())
 
 #############
 filename = 'task.zip'
