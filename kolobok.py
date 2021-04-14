@@ -12,8 +12,9 @@ class Character:  # базовый класс для героев
 class Kolobok(Character):  # класс Колобок (нужно доописать)
   def roll(self):
     print('Bye')
+    print()
   def sing(self):
-    print("I escaped...")
+    return "I escaped from"
   def die(self):
     print('Game over')
 
@@ -42,24 +43,32 @@ class Hare(Character):
   pass
 def tale():
   gm = Grandma('Grandma')
-  gph = Grandpha('Grandma')
+  gph = Grandpha('Grandpha')
   kolobok = Kolobok('kolobok')
   hare = Hare('Hare')
   wolf = Wolf('Wolf')
   bear = Bear('Misha')
   fox = Fox("Fox")
   characters = [gm, gph, hare, wolf, bear, fox]
+  escapes = [gm, gph]
   kolobok = Kolobok('Kolobok')
   ask_to_bake = gph.ask_to_bake()
   if ask_to_bake:
     gm.scrap_the_barrel()
+  kolobok.roll()
   is_alive = True
   while is_alive:
     for i in characters:
       if i == gm or i == gph:
         continue
       print(f'{i.name}: {i.try_to_eat()}')
-    if i == fox:
-      kolobok.die()
-      is_alive = False
+      if i != fox:
+        for y in escapes:
+          print(f'{kolobok.sing()} {y.name}')
+        print(f'I\'ll escape from you, {i.name}')
+        escapes.append(i)
+        kolobok.roll()
+      else:
+        kolobok.die()
+        is_alive = False
 tale()
