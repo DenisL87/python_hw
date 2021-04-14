@@ -8,17 +8,16 @@ class Character:  # базовый класс для героев
   def say_name(self):
     print(self.name)
 
-
 class Kolobok(Character):  # класс Колобок (нужно доописать)
   def roll(self):
     print(f'{self.name}: Bye')
-    print()
+    print('______________________________')
     
   def sing(self):
     return f'{self.name}: I escaped from'
   
   def get_outfoxed(self):
-    return 'OK'
+    print(f'{self.name}: OK')
     
   def die(self):
     print('The end')
@@ -26,15 +25,17 @@ class Kolobok(Character):  # класс Колобок (нужно доопис�
 class Grandpa(Character):
   def ask_to_bake(self):
     print(f'{self.name}: Hey grandma, bake me a Kolobok!')
-    return True
+    return False
 
 class Grandma(Character):
   def scrape_the_corners(self):
     print(f'{self.name}: OK, I\'ll scrape the corners')
+    self.bake()
     
   def bake(self):
     print(f'{self.name}: Kolobok has been cooked, let us put it on the window')
-
+  def refuse_to_bake(self):
+    print(f'{self.name}: Bake yourself')
 class Hare(Character):
   pass
 
@@ -45,8 +46,10 @@ class Bear(Character):
   pass
 
 class Fox(Character):
-  def outfox(self):
+  def outfox(self, kolobok):
     print(f'{self.name}: Get on my tongue and sing again')
+    kolobok.get_outfoxed()
+    self.eat_kolobok(kolobok)
     
   def eat_kolobok(self, kolobok):
     print(f'{self.name}: MMMM yammy')
@@ -65,7 +68,9 @@ def tale():
   ask_to_bake = gp.ask_to_bake()
   if ask_to_bake:
     gm.scrape_the_corners()
-    gm.bake()
+  else:
+    gm.refuse_to_bake()
+    return
   kolobok.roll()
   is_alive = True
   while is_alive:
@@ -85,8 +90,7 @@ def tale():
         for y in escapes:
           print(f'{kolobok.sing()} {y.name}')
         print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
-        fox.outfox()
-        print(f'{kolobok.name}: {kolobok.get_outfoxed()}')
-        fox.eat_kolobok(kolobok)
+        fox.outfox(kolobok)
         is_alive = False
 tale()
+
