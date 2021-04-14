@@ -8,6 +8,7 @@ class Character:  # базовый класс для героев
   def say_name(self):
     print(self.name)
 
+
 class Kolobok(Character):  # класс Колобок (нужно доописать)
   def roll(self):
     print(f'{self.name}: Bye')
@@ -49,6 +50,7 @@ class Fox(Character):
     
   def eat_kolobok(self, kolobok):
     print(f'{self.name}: MMMM yammy')
+    kolobok.die()
 
 def tale():
   kolobok = Kolobok('Kolobok')
@@ -86,6 +88,5 @@ def tale():
         fox.outfox()
         print(f'{kolobok.name}: {kolobok.get_outfoxed()}')
         fox.eat_kolobok(kolobok)
-        kolobok.die()
         is_alive = False
 tale()
