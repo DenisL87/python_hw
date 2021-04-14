@@ -17,8 +17,10 @@ class Kolobok(Character):  # класс Колобок (нужно доопис�
     return "I escaped from"
   def die(self):
     print('Game over')
+  def get_outfoxed(self):
+    return 'OK'
 
-class Grandpha(Character):
+class Grandpa(Character):
   def ask_to_bake(self):
     print('Hey grandma, bake me a Kolobok!')
     return True
@@ -41,20 +43,17 @@ class Fox(Character):
   def eat_kolobok(self, kolobok):
     print('MMMM yammy')
 
-class Hare(Character):
-  pass
 def tale():
   kolobok = Kolobok('Kolobok')
   gm = Grandma('Grandma')
-  gph = Grandpha('Grandpha')
-  kolobok = Kolobok('Kolobok')
+  gp = Grandpa('Grandpha')
   hare = Hare('Hare')
   wolf = Wolf('Wolf')
   bear = Bear('Misha')
   fox = Fox("Fox")
-  characters = [gm, gph, hare, wolf, bear, fox]
-  escapes = [gm, gph]
-  ask_to_bake = gph.ask_to_bake()
+  characters = [gm, gp, hare, wolf, bear, fox]
+  escapes = [gm, gp]
+  ask_to_bake = gp.ask_to_bake()
   if ask_to_bake:
     gm.scrap_the_barrel()
     gm.bake()
@@ -62,7 +61,7 @@ def tale():
   is_alive = True
   while is_alive:
     for i in characters:
-      if i == gm or i == gph:
+      if i == gm or i == gp:
         continue
       print(f'{i.name}: {i.try_to_eat()}')
       if i != fox:
@@ -76,6 +75,7 @@ def tale():
           print(f'{kolobok.sing()} {y.name}')
         print(f'I\'ll escape from you, {i.name}')
         fox.outfox()
+        print(f'{kolobok.name}: {kolobok.get_outfoxed()}')
         fox.eat_kolobok(kolobok)
         kolobok.die()
         is_alive = False
