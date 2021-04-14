@@ -24,7 +24,7 @@ class Kolobok(Character):  # класс Колобок (нужно доопис�
 
 class Grandpa(Character):
   def ask_to_bake(self):
-    print(f'{self.name}: Hey grandma, bake me a Kolobok!')
+    print(f'{self.name}: Hey grandma, bake me a kolobok!')
     return True
 
 class Grandma(Character):
