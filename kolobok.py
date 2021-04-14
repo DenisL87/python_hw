@@ -54,12 +54,12 @@ class Fox(Character):
 def tale():
   kolobok = Kolobok('Kolobok')
   gm = Grandma('Grandma')
-  gp = Grandpa('Grandpha')
+  gp = Grandpa('Grandpa')
   hare = Hare('Hare')
   wolf = Wolf('Wolf')
   bear = Bear('Misha')
   fox = Fox("Fox")
-  characters = [kolobok, gm, gp, hare, wolf, bear, fox]
+  characters = [gm, gp, hare, wolf, bear, fox]
   escapes = [gm, gp]
   ask_to_bake = gp.ask_to_bake()
   if ask_to_bake:
