@@ -8,7 +8,6 @@ class Character:  # базовый класс для героев
   def say_name(self):
     print(self.name)
 
-
 class Kolobok(Character):  # класс Колобок (нужно доописать)
   def roll(self):
     print(f'{self.name}: Bye')
