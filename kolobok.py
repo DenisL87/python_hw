@@ -73,12 +73,14 @@ def tale():
         continue
       print(f'{i.name}: {i.try_to_eat()}')
       if i != fox:
+        print(f'{kolobok.name}: Don\'t eat me, you\'d better listen to my song:')
         for y in escapes:
           print(f'{kolobok.sing()} {y.name}')
         print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
         escapes.append(i)
         kolobok.roll()
       else:
+        print(f'{kolobok.name}: Don\'t eat me, you\'d better listen to my song:')
         for y in escapes:
           print(f'{kolobok.sing()} {y.name}')
         print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
@@ -88,4 +90,3 @@ def tale():
         kolobok.die()
         is_alive = False
 tale()
-
