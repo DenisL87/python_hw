@@ -33,7 +33,7 @@ class Grandma(Character):
     print(f'{self.name}: OK, I\'ll scrape the corners')
     
   def bake(self):
-    print(f'{self.name}: Kolobok has been prepared, let us put it on the window')
+    print(f'{self.name}: Kolobok has been cooked, let us put it on the window')
 
 class Hare(Character):
   pass
