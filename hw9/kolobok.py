@@ -1,3 +1,4 @@
+
 class Character:  # базовый класс для героев
     def __init__(self, name):
         self.name = name
@@ -7,7 +8,6 @@ class Character:  # базовый класс для героев
 
     def say_name(self):
         print(self.name)
-
 
 class Kolobok(Character):  # класс Колобок (нужно доописать)
     def roll(self):
@@ -23,17 +23,15 @@ class Kolobok(Character):  # класс Колобок (нужно доопис�
     def die(self):
         print('The end')
 
-
 class Grandpa(Character):
-    def ask_to_bake(self):
+    def ask_to_bake(self, grandma):
         print(f'{self.name}: Hey grandma, bake me a kolobok!')
-        return True
-
+        grandma.scrape_the_corners()
+        grandma.bake()
 
 class Grandma(Character):
     def scrape_the_corners(self):
         print(f'{self.name}: OK, I\'ll scrape the corners')
-        self.bake()
 
     def bake(self):
         print(f'{self.name}: Kolobok has been baked, let us put it on the window')
@@ -66,11 +64,9 @@ def tale():
     bear = Bear('Misha')
     fox = Fox("Fox")
     characters = [gm, gp, hare, wolf, bear, fox]
-    escapes = [gm, gp]
-    ask_to_bake = gp.ask_to_bake()
-    if ask_to_bake:
-        gm.scrape_the_corners()
+    gp.ask_to_bake(gm)
     kolobok.roll()
+    escapes = [gm, gp]
     is_alive = True
     while is_alive:
         for i in characters:
@@ -82,8 +78,8 @@ def tale():
                 for y in escapes:
                     print(f'{kolobok.sing()} {y.name}')
                 print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
-                escapes.append(i)
                 kolobok.roll()
+                escapes.append(i)
             else:
                 print(f'{kolobok.name}: Don\'t eat me, you\'d better listen to my song:')
                 for y in escapes:
