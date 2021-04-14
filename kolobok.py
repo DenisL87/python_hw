@@ -11,37 +11,45 @@ class Character:  # базовый класс для героев
 
 class Kolobok(Character):  # класс Колобок (нужно доописать)
   def roll(self):
-    print('Bye')
+    print(f'{self.name}: Bye')
     print()
+    
   def sing(self):
-    return "I escaped from"
+    return f'{self.name}: I escaped from'
+    
   def die(self):
-    print('Game over')
+    print('The end')
+    
   def get_outfoxed(self):
     return 'OK'
 
 class Grandpa(Character):
   def ask_to_bake(self):
-    print('Hey grandma, bake me a Kolobok!')
+    print(f'{self.name}: Hey grandma, bake me a Kolobok!')
     return True
 
 class Grandma(Character):
   def scrap_the_barrel(self):
-    print('OK, I\'ll scrap the barrel')
+    print(f'{self.name}: OK, I\'ll scrap the barrel')
+    
   def bake(self):
-    print('Kolobok has been prepared, let us put it on the window')
+    print(f'{self.name}: Kolobok has been prepared, let us put it on the window')
 
 class Hare(Character):
   pass
+
 class Wolf(Character):
   pass
+
 class Bear(Character):
   pass
+
 class Fox(Character):
   def outfox(self):
-    print('Get on my tongue and sing again')
+    print(f'{self.name}: Get on my tongue and sing again')
+    
   def eat_kolobok(self, kolobok):
-    print('MMMM yammy')
+    print(f'{self.name}: MMMM yammy')
 
 def tale():
   kolobok = Kolobok('Kolobok')
@@ -67,13 +75,13 @@ def tale():
       if i != fox:
         for y in escapes:
           print(f'{kolobok.sing()} {y.name}')
-        print(f'I\'ll escape from you, {i.name}')
+        print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
         escapes.append(i)
         kolobok.roll()
       else:
         for y in escapes:
           print(f'{kolobok.sing()} {y.name}')
-        print(f'I\'ll escape from you, {i.name}')
+        print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
         fox.outfox()
         print(f'{kolobok.name}: {kolobok.get_outfoxed()}')
         fox.eat_kolobok(kolobok)
