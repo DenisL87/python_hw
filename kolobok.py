@@ -27,7 +27,7 @@ class Grandma(Character):
   def scrap_the_barrel(self):
     print('OK, I\'ll scrap the barrel')
   def bake(self):
-    print('The Kolobok has been prepared')
+    print('Kolobok has been prepared, let us put it on the window')
 
 class Hare(Character):
   pass
@@ -36,25 +36,28 @@ class Wolf(Character):
 class Bear(Character):
   pass
 class Fox(Character):
+  def outfox(self):
+    print('Get on my tongue and sing again')
   def eat_kolobok(self, kolobok):
     print('MMMM yammy')
 
 class Hare(Character):
   pass
 def tale():
+  kolobok = Kolobok('Kolobok')
   gm = Grandma('Grandma')
   gph = Grandpha('Grandpha')
-  kolobok = Kolobok('kolobok')
+  kolobok = Kolobok('Kolobok')
   hare = Hare('Hare')
   wolf = Wolf('Wolf')
   bear = Bear('Misha')
   fox = Fox("Fox")
   characters = [gm, gph, hare, wolf, bear, fox]
   escapes = [gm, gph]
-  kolobok = Kolobok('Kolobok')
   ask_to_bake = gph.ask_to_bake()
   if ask_to_bake:
     gm.scrap_the_barrel()
+    gm.bake()
   kolobok.roll()
   is_alive = True
   while is_alive:
@@ -69,6 +72,11 @@ def tale():
         escapes.append(i)
         kolobok.roll()
       else:
+        for y in escapes:
+          print(f'{kolobok.sing()} {y.name}')
+        print(f'I\'ll escape from you, {i.name}')
+        fox.outfox()
+        fox.eat_kolobok(kolobok)
         kolobok.die()
         is_alive = False
 tale()
