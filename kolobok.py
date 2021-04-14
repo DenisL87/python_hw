@@ -16,12 +16,12 @@ class Kolobok(Character):  # класс Колобок (нужно доопис�
     
   def sing(self):
     return f'{self.name}: I escaped from'
+  
+  def get_outfoxed(self):
+    return 'OK'
     
   def die(self):
     print('The end')
-    
-  def get_outfoxed(self):
-    return 'OK'
 
 class Grandpa(Character):
   def ask_to_bake(self):
