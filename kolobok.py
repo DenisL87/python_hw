@@ -29,8 +29,8 @@ class Grandpa(Character):
     return True
 
 class Grandma(Character):
-  def scrap_the_barrel(self):
-    print(f'{self.name}: OK, I\'ll scrap the barrel')
+  def scrape_the_corners(self):
+    print(f'{self.name}: OK, I\'ll scrape the corners')
     
   def bake(self):
     print(f'{self.name}: Kolobok has been prepared, let us put it on the window')
@@ -59,11 +59,11 @@ def tale():
   wolf = Wolf('Wolf')
   bear = Bear('Misha')
   fox = Fox("Fox")
-  characters = [gm, gp, hare, wolf, bear, fox]
+  characters = [kolobok, gm, gp, hare, wolf, bear, fox]
   escapes = [gm, gp]
   ask_to_bake = gp.ask_to_bake()
   if ask_to_bake:
-    gm.scrap_the_barrel()
+    gm.scrape_the_corners()
     gm.bake()
   kolobok.roll()
   is_alive = True
@@ -88,3 +88,4 @@ def tale():
         kolobok.die()
         is_alive = False
 tale()
+
