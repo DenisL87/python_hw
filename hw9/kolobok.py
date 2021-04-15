@@ -23,6 +23,9 @@ class Kolobok(Character):  # класс Колобок (нужно доопис�
     def die(self):
         print('The end')
 
+    def try_to_eat(self):
+        raise AttributeError
+
 class Grandpa(Character):
     def ask_to_bake(self, grandma):
         print(f'{self.name}: Hey grandma, bake me a kolobok!')
