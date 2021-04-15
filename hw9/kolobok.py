@@ -10,6 +10,7 @@ class Character:  # базовый класс для героев
         print(self.name)
 
 class Kolobok(Character):  # класс Колобок (нужно доописать)
+    is_alive = True
     def roll(self):
         print(f'{self.name}: Bye')
         print('______________________________')
@@ -21,6 +22,7 @@ class Kolobok(Character):  # класс Колобок (нужно доопис�
         print(f'{self.name}: OK')
 
     def die(self):
+        self.is_alive = False
         print('The end')
 
     def try_to_eat(self):
@@ -70,8 +72,7 @@ def tale():
     gp.ask_to_bake(gm)
     kolobok.roll()
     escapes = [gm, gp]
-    is_alive = True
-    while is_alive:
+    while kolobok.is_alive:
         for i in characters:
             if i == gm or i == gp:
                 continue
@@ -89,6 +90,5 @@ def tale():
                     print(f'{kolobok.sing()} {y.name}')
                 print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
                 fox.outfox(kolobok)
-                is_alive = False
 
 tale()
