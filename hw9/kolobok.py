@@ -8,6 +8,9 @@ class Character:  # базовый класс для героев
 
     def say_name(self):
         print(self.name)
+    
+    def listen(self):
+      return 'OK'
 
 class Kolobok(Character):  # класс Колобок (нужно доописать)
     is_alive = True
@@ -79,6 +82,7 @@ def tale():
             print(f'{i.name}: {i.try_to_eat()}')
             if i != fox:
                 print(f'{kolobok.name}: Don\'t eat me, you\'d better listen to my song:')
+                print(f'{i.name}: {i.listen()}')
                 for y in escapes:
                     print(f'{kolobok.sing()} {y.name}')
                 print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
@@ -86,6 +90,7 @@ def tale():
                 escapes.append(i)
             else:
                 print(f'{kolobok.name}: Don\'t eat me, you\'d better listen to my song:')
+                print(f'{i.name}: {i.listen()}')
                 for y in escapes:
                     print(f'{kolobok.sing()} {y.name}')
                 print(f'{kolobok.name}: I\'ll escape from you, {i.name}')
