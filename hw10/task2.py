@@ -6,6 +6,7 @@ class Person:
             self.age = int(age)
         except:
             raise TypeError
+            
     def get_friends(self):
         return self.__friends
 
