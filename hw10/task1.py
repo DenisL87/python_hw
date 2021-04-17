@@ -36,11 +36,16 @@ class Triangle(Figure):
     def perimeter(self):
         return self.side_a + self.side_b + self.side_c
 
+    @property
+    def area(self):
+        return (self.side_a + self.side_b + self.side_c) / 2
+
 sq = Square(4)
 print(sq.perimeter)
 rec = Rectangle(10, 6)
 print(rec.perimeter)
-tr = Triangle(4, 5, 8)
+tr = Triangle(14, 15, 3)
 print(tr.perimeter)
 print(sq.area)
 print(rec.area)
+print(tr.area)
