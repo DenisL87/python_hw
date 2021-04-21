@@ -41,11 +41,11 @@ class Student():
     __group = None
   
   def get_group(self):
-    return self.group
+    return self.__group
   
-  # def transfer_to_anoter_group(self, student, old_group, new_group):
-  #   old_group.expell_student(student)
-  #   new_group.add_student(student)
+  def transfer_to_anoter_group(self, new_group):
+    self.get_group.expell_student(self)
+    new_group.add_student(self)
 
 group = Group("Group A")
 group_b = Group ("Group B")
@@ -58,3 +58,6 @@ print(group.student_average_grade(stud.grades))
 print(group.student_average_grade(stud1.grades))
 print(group.group_average_grade())
 print(group_b.get_students())
+stud.transfer_to_anoter_group(group_b)
+print(group_b.get_students())
+print(group.get_students())
