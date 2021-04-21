@@ -1,65 +1,60 @@
-class Person:
-    __friends = []
-    def __init__(self, name, age):
-        try:
-            self.name = name
-            self.age = int(age)
-        except:
-            raise TypeError
-            
-    def get_friends(self):
-        return self.__friends
+class Group():
+  def __init__(self, name):
+    self.name = name
+    self.__students = []
+  
+  def get_students(self):
+    return self.__students
+  
+  def add_student(self, student):
+    self.__students.append(student)
+    student.get_group = self
+    
+  def expell_student(self, student):
+      self.__students.remove(student)
+      student.get_group = None
+  
+  def student_average_grade(self, grades):
+    sum = 0
+    count = 0
+    while count < len(grades):
+      sum += grades[count]
+      count += 1
+    return sum / len(grades)
+    
+  def group_average_grade(self):
+    if len(self.__students) > 0:
+      sum = 0
+      count = 0
+      while count < len(self.__students):
+        sum += self.student_average_grade(self.__students[count].grades)
+        count += 1
+      return sum / len(self.__students)
+    else:
+      return'There are no students in the group'
+    
+class Student():
+  def __init__(self, name, age, grades):
+    self.name = name
+    self.age = age
+    self.grades = grades
+    __group = None
+  
+  def get_group(self):
+    return self.group
+  
+  # def transfer_to_anoter_group(self, student, old_group, new_group):
+  #   old_group.expell_student(student)
+  #   new_group.add_student(student)
 
-    def is_known(self, another_person_object):
-        if another_person_object in self.__friends:
-            return True
-        return False
-
-    def know(self, another_person_object):
-        self.__friends.append(another_person_object)
-        another_person_object.get_friends().append(self)
-
-p = Person('fqf', 45)
-p2 = Person("afgadg", 62)
-p.know(p2)
-print(p.is_known(p2))
-print(p2.is_known(p))
-
-
-
-import uuid
-
-class Person:
-    def __init__(self, age, name, _id):
-        self.name = name
-        self.age = age
-        self._id = _id
-        self.__friends = {}
-
-    def know(self, other):
-        self.__friends.setdefault(other._id, other)
-
-    def is_known(self, other):
-        return other._id in self.__friends
-
-    @property
-    def friends(self):
-        return list(self.__friends.values())
-
-
-person1 = Person(18, 'Oleg', _id=uuid.uuid4())
-person2 = Person(20, 'Ivan', _id=uuid.uuid4())
-person3 = Person(20, 'Ivan', _id=uuid.uuid4())
-
-print(person1.is_known(person2))
-
-person1.know(person2)
-person1.know(person2)
-person1.know(person2)
-person1.know(person2)
-person1.know(person2)
-person1.know(person3)
-print(person1.is_known(person2))
-print(person2.is_known(person3))
-print(person1.friends)
-
+group = Group("Group A")
+group_b = Group ("Group B")
+stud = Student('Vova', 17, [5, 7])
+stud1 = Student('Vasya', 18, [8, 3])
+group.add_student(stud)
+group.add_student(stud1)
+print(group.get_students())
+print(group.student_average_grade(stud.grades))
+print(group.student_average_grade(stud1.grades))
+print(group.group_average_grade())
+print(group_b.get_students())
