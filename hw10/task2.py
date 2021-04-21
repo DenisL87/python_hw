@@ -7,6 +7,9 @@ class Group():
     return self.__students
   
   def add_student(self, student):
+    if student.get_group != None:
+      print(f'The student is already in the group: {student.get_group}')
+      pass
     self.__students.append(student)
     student.get_group = self
     
@@ -64,3 +67,4 @@ stud.transfer_to_anoter_group(group_b)
 print(group_b.get_students())
 print(group.get_students())
 stud1.transfer_to_anoter_group(group)
+group.add_student(stud)
