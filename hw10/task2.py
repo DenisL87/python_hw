@@ -44,6 +44,8 @@ class Student():
     return self.__group
   
   def transfer_to_anoter_group(self, new_group):
+    if new_group == self.get_group:
+      print('Student is already in this group')
     self.get_group.expell_student(self)
     new_group.add_student(self)
 
@@ -61,3 +63,4 @@ print(group_b.get_students())
 stud.transfer_to_anoter_group(group_b)
 print(group_b.get_students())
 print(group.get_students())
+stud1.transfer_to_anoter_group(group)
