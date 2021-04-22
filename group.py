@@ -39,10 +39,7 @@ class Group():
       sum = 0
       count = 0
       while count < len(self.__students):
-        try:
-          sum += self.student_mean_grade(self.__students[count])
-        except:
-          pass
+        sum += self.student_mean_grade(self.__students[count])
         count += 1
       if sum == 0:
         return sum
@@ -85,3 +82,4 @@ print(group_a.student_mean_grade(stud1))
 print(group_a.student_mean_grade(stud2))
 stud3 = Student('Titsky', 'Kolya', 19)
 print(group_a.student_mean_grade(stud3))
+
