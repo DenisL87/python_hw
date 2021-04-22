@@ -1,7 +1,7 @@
 class Group():
-  __students = []
   def __init__(self, name):
     self.name = name
+    self.__students = []
   
   def get_students(self):
     return self.__students
@@ -37,12 +37,12 @@ class Student():
     self.age = age
     self.grades = grades
 
-group = Group("Group A")
-stud = Student('Vova', 17, [5, 7])
-stud1 = Student('Vasya', 18, [8, 3])
-group.add_student(stud)
-group.add_student(stud1)
-print(group.get_students())
-print(group.student_average_grade(stud.grades))
-print(group.student_average_grade(stud1.grades))
-print(group.group_average_grade())
+group_a = Group("Group A")
+stud1 = Student('Vova', 17, [5, 7])
+stud2 = Student('Vasya', 18, [8, 3])
+group_a.add_student(stud1)
+group_a.add_student(stud2)
+print(group_a.get_students())
+print(group_a.student_average_grade(stud1.grades))
+print(group_a.student_average_grade(stud2.grades))
+print(group_a.group_average_grade())
