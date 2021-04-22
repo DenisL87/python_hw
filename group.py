@@ -104,7 +104,7 @@ class Group():
         sum += student.grades[count]
         count += 1
       return sum / len(student.grades)
-    
+  
   def group_mean_grade(self):
     if len(self.__students) < 1:
       return'There are no students in the group'
@@ -114,7 +114,10 @@ class Group():
       while count < len(self.__students):
         sum += self.student_mean_grade(self.__students[count])
         count += 1
-      return sum / len(self.__students)
+      if sum == 0:
+        return sum
+      else:
+        return sum / len(self.__students)
       
 class Student():
   def __init__(self, name, age):
@@ -131,11 +134,13 @@ class Student():
     new_group.add_student(self)
 
 stud1 = Student('Vova', 18)
+stud2 = Student('Valera', 19)
 group_a = Group('Group A')
 group_a.group_mean_grade()
 group_a.add_student(stud1)
+group_a.add_student(stud2)
 group_a.put_a_grade(stud1, 5)
 group_a.put_a_grade(stud1, 2)
 print(stud1.grades)
 print(group_a.student_mean_grade(stud1))
-print(group_a.group_mean_grade)
+print(group_a.group_mean_grade())
