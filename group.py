@@ -45,7 +45,12 @@ class Student():
   
   def assign_group(self, group):
     self.group = group
+  
+  def transfer_to_another_group(self, new_group):
+    self.group.expell_student(self)
+    new_group.add_student(self)
 
+stud3 = Student('Valera', 20, [5, 6])
 group_a = Group("Group A")
 group_b = Group("Group B")
 stud1 = Student('Vova', 17, [5, 7])
@@ -54,7 +59,10 @@ stud2 = Student('Vasya', 18, [8, 3])
 group_a.add_student(stud1)
 group_a.add_student(stud2)
 group_b.add_student(stud1)
+stud1.transfer_to_another_group(group_b)
+print(stud1.group.name)
 print(group_a.get_students())
 print(group_a.student_average_grade(stud1.grades))
 print(group_a.student_average_grade(stud2.grades))
 print(group_a.group_average_grade())
+
