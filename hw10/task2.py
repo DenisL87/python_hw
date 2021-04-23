@@ -1,70 +1,29 @@
-class Group():
-  def __init__(self, name):
-    self.name = name
-    self.__students = []
-  
-  def get_students(self):
-    return self.__students
-  
-  def add_student(self, student):
-    if student.get_group != None:
-      print(f'The student is already in the group: {student.get_group}')
-      pass
-    self.__students.append(student)
-    student.get_group = self
-    
-  def expell_student(self, student):
-      self.__students.remove(student)
-      student.get_group = None
-  
-  def student_average_grade(self, grades):
-    sum = 0
-    count = 0
-    while count < len(grades):
-      sum += grades[count]
-      count += 1
-    return sum / len(grades)
-    
-  def group_average_grade(self):
-    if len(self.__students) > 0:
-      sum = 0
-      count = 0
-      while count < len(self.__students):
-        sum += self.student_average_grade(self.__students[count].grades)
-        count += 1
-      return sum / len(self.__students)
-    else:
-      return'There are no students in the group'
-    
-class Student():
-  def __init__(self, name, age, grades):
+
+class Person:
+  def __init__(self, name, age):
     self.name = name
     self.age = age
-    self.grades = grades
-    __group = None
+    self.__friends = []
   
-  def get_group(self):
-    return self.__group
+  def get_friends(self):
+    return self.__friends
   
-  def transfer_to_anoter_group(self, new_group):
-    if new_group == self.get_group:
-      print('Student is already in this group')
-    self.get_group.expell_student(self)
-    new_group.add_student(self)
+  def know(self, person):
+    self.__friends.append(person)
+    person.get_friends().append(self)
+  
+  def is_known(self, person):
+    if person in self.__friends:
+      return True
+    else:
+      return False
+      
+person_a = Person('Vova', 56)
+person_b = Person('Vitya', 56)
+person_c = Person('Vadim', 56)
 
-group = Group("Group A")
-group_b = Group ("Group B")
-stud = Student('Vova', 17, [5, 7])
-stud1 = Student('Vasya', 18, [8, 3])
-group.add_student(stud)
-group.add_student(stud1)
-print(group.get_students())
-print(group.student_average_grade(stud.grades))
-print(group.student_average_grade(stud1.grades))
-print(group.group_average_grade())
-print(group_b.get_students())
-stud.transfer_to_anoter_group(group_b)
-print(group_b.get_students())
-print(group.get_students())
-stud1.transfer_to_anoter_group(group)
-group.add_student(stud)
+print(person_a.is_known(person_c))
+person_a.know(person_c)
+print(person_a.is_known(person_c))
+print(person_b.is_known(person_c))
+print(person_c.is_known(person_a))
