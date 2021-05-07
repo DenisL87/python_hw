@@ -84,3 +84,59 @@ def main_fighting_area():
 
 
 main_fighting_area()
+
+
+
+
+# from random import randint, choice
+# from typing import NamedTuple
+
+
+# class Warrior:
+#   def __init__(self, name, health, strength, weapon):
+#     self.name = name
+#     self.health = health
+#     self.strength = strength
+#     self.weapon = weapon
+#     self.armour = randint(1, 101)
+#     self.is_alive = True
+    
+#   def add_health(self, value):
+#     if value > 0:
+#       self.health += value
+#     else:
+#       return 'nothing to add'
+#     if self.health > 100:
+#       self.health = 100
+  
+#   def add_armour(self, value):
+#     if value > 0:
+#       self.health += value
+#     else:
+#       return 'nothing to add'
+  
+#   def change_weapon(self, another_weapon):
+#         self.weapon = another_weapon
+  
+#   def hit(self, enemy):
+#     if enemy.is_alive == False:
+#       print(enemy.name + ' is dead')
+#       raise Exception
+#     if enemy.armor:
+#       predict = enemy.armor - self.weapon.power
+#       if predict < 0:
+#         enemy.armor -= self.weapon.power + predict
+#         enemy.health += predict
+#         return
+#       enemy.armor -= self.weapon.power
+#       return
+#       predict = enemy.health - self.weapon.power
+#       if predict < 0:
+#         enemy.is_alive = False
+#         return
+#       enemy.health -= self.weapon.power
+
+    
+# class Weapon(NamedTuple):
+#     name: str
+#     power: int
