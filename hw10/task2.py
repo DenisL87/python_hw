@@ -27,3 +27,34 @@ person_a.know(person_c)
 print(person_a.is_known(person_c))
 print(person_b.is_known(person_c))
 print(person_c.is_known(person_a))
+
+
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+    self.__friends = []
+  
+  def is_known(self, person):
+    if person in self.__friends:
+      return True
+    return False
+  
+  def get_acquainted(know):
+    def acq(self, person):
+      self.__friends.append(person)
+      know(person, self)
+    return acq
+    
+  @get_acquainted 
+  def know(self, person):
+    self.__friends.append(person)
+
+pers1 = Person('afgas', 5)
+pers2 = Person('afgaafga', 6)
+
+
+pers1.know(pers2)
+print(pers1.is_known(pers2))
+print(pers2.is_known(pers1))
