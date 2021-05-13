@@ -41,20 +41,23 @@ class Person:
       return True
     return False
   
-  def get_acquainted(know):
+  def __get_acquainted(know):
     def acq(self, person):
       self.__friends.append(person)
       know(person, self)
     return acq
     
-  @get_acquainted 
+  @__get_acquainted 
   def know(self, person):
     self.__friends.append(person)
 
 pers1 = Person('afgas', 5)
 pers2 = Person('afgaafga', 6)
-
+pers3 = Person('afgaafga', 6)
 
 pers1.know(pers2)
+pers1.know(pers3)
 print(pers1.is_known(pers2))
 print(pers2.is_known(pers1))
+print(pers2.is_known(pers3))
+print(pers3.is_known(pers1))
